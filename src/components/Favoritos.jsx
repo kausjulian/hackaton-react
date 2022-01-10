@@ -10,7 +10,7 @@ const Favoritos = () => {
       <div className="container row">
         {favoritos.map((movie) => (
           <Pelicula key={movie.id} movie={movie} {...movie}>
-            <i class="bi bi-trash-fill"></i>
+            <i className="bi bi-trash-fill"></i>
           </Pelicula>
         ))}
       </div>
