@@ -1,7 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { MoviesContext } from "../context/MoviesContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Header = () => {
+  const { favoritos } = useContext(MoviesContext);
+  const [search, setSearch] =  useState("")
+  const navigate = useNavigate()
+  
+  const buscar = (e) =>{
+    e.preventDefault()
+    if (search ==="" ) {return}
+    navigate()
+  }
+
+  
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,12 +52,15 @@ const Header = () => {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                value={search}
+                onChange={(e)=>setSearch(e.target.value)}
               />
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
-              <Link to="/favoritos" className="nav-link">
+              <Link to="/favoritos" className="nav-link d-flex align-items-center">
                 <i className="bi bi-heart-fill"></i>
+                <span className="m-1 text-dark">{favoritos.length}</span>
               </Link>
             </form>
           </div>

@@ -20,6 +20,7 @@ function App() {
           <Route path = '/peliculas' element={<Peliculas />} />
           <Route path = '/peliculas/:id' element={<PeliDetalle />} />
           <Route path = '/favoritos' element={<Favoritos />} />
+          <Route path = '/search/:busqueda' element={<Favoritos />} />
         </Routes>
       </Router>
     </MoviesProvider>

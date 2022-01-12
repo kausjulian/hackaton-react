@@ -3,6 +3,7 @@ import axios from "axios";
 import { MoviesContext } from "../context/MoviesContext";
 import { Pelicula } from "./Pelicula";
 
+
 const Peliculas = () => {
   const { moviesTop, setMoviesTop, onAdd } = useContext(MoviesContext);
 
@@ -20,9 +21,10 @@ const Peliculas = () => {
   return (
     <main className="container p-5">
       <div className="container row">
+      <h1 className="text-center mt-3 p-3">Mejores Valoradas</h1>
         {moviesTop.map((movie) => (
           <Pelicula key={movie.id} movie={movie} {...movie}>
-            <i onClick={() => onAdd(movie)} className="bi bi-heart-fill"></i>
+            <i onClick={() => onAdd(movie)} className="bi bi-heart-fill" ></i>
           </Pelicula>
         ))}
       </div>

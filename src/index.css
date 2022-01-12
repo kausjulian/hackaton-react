@@ -3,7 +3,15 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+a{
+  text-decoration: none;
+  color: black;
+  
+}
+.movie-card:hover .card-title{
+  color: gray;
+  transition: color 0.3s;
+}
 .movie-card {
   height: 500px;
   border: none;
@@ -23,4 +31,14 @@ body {
 .bi-heart-fill,
 .bi-trash-fill:hover {
   color: red;
+}
+
+.slider{
+  height: 350px;
+  object-fit: cover;
+}
+
+.link-favoritos:hover{
+  color:rgb(82, 120, 192) !important;
+
 }
